@@ -1,0 +1,33 @@
+{
+  "root": "packages/comp-types",
+  "sourceRoot": "packages/comp-types/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/comp-types",
+        "main": "packages/comp-types/src/index.ts",
+        "tsConfig": "packages/comp-types/tsconfig.lib.json",
+        "assets": ["packages/comp-types/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/comp-types/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/comp-types"],
+      "options": {
+        "jestConfig": "packages/comp-types/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
