@@ -1,0 +1,39 @@
+{
+  "root": "packages/poke-fetch",
+  "sourceRoot": "packages/poke-fetch/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/poke-fetch",
+        "main": "packages/poke-fetch/src/index.ts",
+        "tsConfig": "packages/poke-fetch/tsconfig.app.json",
+        "assets": ["packages/poke-fetch/*.md"]
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "poke-fetch:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/poke-fetch/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/poke-fetch"],
+      "options": {
+        "jestConfig": "packages/poke-fetch/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

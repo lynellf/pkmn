@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
-    "comp-types": "packages/comp-types"
+    "comp-types": "packages/comp-types",
+    "poke-fetch": "packages/poke-fetch"
   }
 }
